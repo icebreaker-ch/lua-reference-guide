@@ -64,7 +64,7 @@ local uiElements = lvgl.build({
     }
 })
 
-uiElements["lbl1']:set({color=BLUE})
+uiElements["lbl1"]:set({color=BLUE})
 ```
 
 ## Warning
