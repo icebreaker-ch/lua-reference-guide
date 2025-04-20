@@ -4,7 +4,7 @@ _**WARNING -**_ **Running a One-Time script will suspend execution of all other 
 
 ## Overview
 
-One-Time scripts start when called upon by a specific radio function or when the user selects them from a contextual menu. They do their task and are then terminated (by user or function) and unloaded.&#x20;
+One-Time scripts start when called upon by a specific radio function or when the user selects them from a contextual menu. They do their task and are then terminated (by user or function) and unloaded.
 
 {% hint style="danger" %}
 <mark style="color:red;">**Running a One-Time script will suspend execution of all other currently loaded Lua scripts (Custom, Telemetry, and Functions). They are automatically restarted once the One-Time script is finished. This is done to provide enough system resources to execute the One-Time script.**</mark>
@@ -29,43 +29,40 @@ One-Time Scripts can be placed anywhere on SD card, however, the folder /SCRIPTS
 {% hint style="info" %}
 If One-Time Script is placed in special folder /SCRIPTS/TOOLS it will be visible in EdgeTX RADIO>TOOLS tab\
 \
-To give this One-Time Script unique name place at the beginning of lua script line: \
+To give this One-Time Script unique name place at the beginning of lua script line:\
 `-- toolName = "TNS|ScriptName|TNE`
 
 Otherwise script's filename will be used to display in RADIO>TOOLS list.
 {% endhint %}
 
-{% hint style="info" %}
 Wizard scripts must be stored in the same subfolder of /TEMPLATES/ with the same "first name" as the template file using it. Some Wizard scripts are just small scripts that load one of the common scripts located in /SCRIPTS/WIZARD/.
 
 ## **Interface**
 
 Every script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
-*   `run` (function) obilgatory\
-    this function is called periodicaly when sccript is running\
+*   `run` (function) obligatory\
+    this function is called periodically when script is running\
     \
     **Parameter**
 
     \
     `event` (number)\
-    This parameter is used to indicates which radio key has been pressed (see [Key Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md)).
+    This parameter is used to indicates which radio key has been pressed (see [Key Events](../part_iii_-_opentx_lua_api_reference/constants/key_events.md)).
 
     \
-    `touchState` (table) \
-    This parameter is only present when radio is equiped with touch interface and `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).\
-
+    `touchState` (table)\
+    This parameter is only present when radio is equipped with touch interface and `event` is a touch event (see [Touch State Events](../part_iii_-_opentx_lua_api_reference/constants/touch-event-constants.md)).\\
 
     **Return value**
 
     \
-    `exit` (multi type)&#x20;
+    `exit` (multi type)
 
-    1. if `exit` value is 0 (zero) script will continue to run&#x20;
-    2. if `exit` value is non-zero script will be halted.&#x20;
-    3. If `exit` value is a text string with the file path to a new Lua script, then the new script will be loaded and run.\
-
-*   `init` (function) _optional_ \
+    1. if `exit` value is 0 (zero) script will continue to run
+    2. if `exit` value is non-zero script will be halted.
+    3. If `exit` value is a text string with the file path to a new Lua script, then the new script will be loaded and run.\\
+*   `init` (function) _optional_\
     this function is called once when script is executed.\
     \
     **Parameters**
