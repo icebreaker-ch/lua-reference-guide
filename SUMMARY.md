@@ -107,6 +107,7 @@
     * [lvgl.image](lua-api-reference/lvgl-for-lua/lvgl.image.md)
     * [lvgl.label](lua-api-reference/lvgl-for-lua/lvgl.label.md)
     * [lvgl.line](lua-api-reference/lvgl-for-lua/lvgl.line.md)
+    * [lvgl.menu](lua-api-reference/lvgl-for-lua/lvgl.menu.md)
     * [lvgl.numberEdit](lua-api-reference/lvgl-for-lua/lvgl.numberedit.md)
     * [lvgl.page](lua-api-reference/lvgl-for-lua/lvgl.page.md)
     * [lvgl.qrcode](lua-api-reference/lvgl-for-lua/lvgl.qrcode.md)
